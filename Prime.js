@@ -19,3 +19,5 @@ console.log(prime(7));
 console.log(prime(9));
 console.log(prime(10));
 console.log(prime(11));
+
+// Time Complexity - O(n)

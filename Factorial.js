@@ -10,3 +10,5 @@ console.log(factorial(1));
 console.log(factorial(2));
 console.log(factorial(5));
 console.log(factorial(7));
+
+// Time Complexity - O(n)
