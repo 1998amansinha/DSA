@@ -16,3 +16,5 @@ function quickSort(arr) {
 }
 
 console.log(quickSort([-6, 20, 8, -2, 4]));
+
+// Time Complexity = O(n^2) Because if the array is already sorted then we end up cretaing an sorted array and an empty array.

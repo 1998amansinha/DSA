@@ -12,3 +12,5 @@ function insertionSort(arr) {
 }
 
 console.log(insertionSort([-6, 20, 8, -2, 4]));
+
+// Time Complexity = O(n^2)
