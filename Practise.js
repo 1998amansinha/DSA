@@ -1,24 +1,28 @@
-var canConstruct = function (ransomNote, magazine) {
-  let hash = {};
-  for (let m of magazine) {
-    if (hash[m]) {
-      hash[m]++;
+var evalRPN = function (tokens) {
+  let stk = [];
+  for (let token of tokens) {
+    if (token === "/" || token === "*" || token === "+" || token === "-") {
+      let b = stk.pop();
+      let a = stk.pop();
+      switch (token) {
+        case "/":
+          stk.push(Math.trunc(a / b));
+          break;
+        case "*":
+          stk.push(a * b);
+          break;
+        case "+":
+          stk.push(a + b);
+          break;
+        case "-":
+          stk.push(a - b);
+          break;
+      }
     } else {
-      hash[m] = 1;
+      stk.push(Number(token));
     }
   }
-
-  console.log(hash);
-
-  for (let h of ransomNote) {
-    if (hash[h] > 0) {
-      hash[h]--;
-    } else {
-      return false;
-    }
-  }
-
-  return true;
+  return stk.pop();
 };
 
-console.log(canConstruct("aa", "aab"));
+console.log(evalRPN(["4", "13", "5", "/", "+"]));
